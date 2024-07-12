@@ -2,6 +2,7 @@ import NLP
 import numpy as np
 import json
 from sklearn.metrics.pairwise import cosine_similarity
+from sklearn.feature_extraction.text import TfidfVectorizer
 
 # Assuming existing functions: tokenize, removeStopWords, lemmatize, bagOfWords
 
@@ -22,8 +23,13 @@ def preprocess_input(input_text):
             lemmatized_token = NLP.lemmatize(token)
             processed_tokens.append(lemmatized_token)
     
-    return processed_tokens
+    return ' '.join(processed_tokens)
 
+def vectorize_texts(texts):
+    # using TF-IDF to improve accuraccy
+    vectorizer = TfidfVectorizer()
+    vectors = vectorizer.fit_transform(texts)
+    return vectors, vectorizer
 
 def load_test_set(file):
     try:
@@ -70,9 +76,11 @@ def find_most_similar(input_vector, test_set, similarity_threshold=0.5):
             raise ValueError(f"Incompatible dimension for input_vector and vector: {input_vector.shape[1]} != {vector_2d.shape[1]}")
 
         similarity = cosine_similarity(input_vector, vector_2d)
+        print(f"Cosine Similarity\nInput vector: {input_vector} // Vector 2d: {vector_2d}")
         similarity_score = similarity[0][0]
 
-
+        
+        print(f"Similarity with vector {idx}: {similarity_score}\n")
         if similarity_score > highest_similarity:
             highest_similarity = similarity_score
             most_similar_vector = vector
@@ -97,18 +105,18 @@ def process_input_to_find_answer(input_text):
 
     # checking only faq entries for now :p
     faq_entries = test_set['faq']
+    tokenized_questions = [preprocess_input(entry['question']) for entry in faq_entries]
+    
+    vectors, vectorizer = vectorize_texts(tokenized_questions)
+    input_vector = vectorizer.transform([preprocessed_input])
+    
+    similarities = cosine_similarity(input_vector, vectors).flatten()
+    most_similar_idx = similarities.argmax()
 
-    tokenized_keys = [preprocess_input(entry['question']) for entry in faq_entries]
-    vectorized_keys = [NLP.vectorize(tokens) for tokens in tokenized_keys]
-
-
-    most_similar_vector, most_similar_index = find_most_similar(input_vector, vectorized_keys, similarity_threshold=0.5)
-    print(f"Most similar vector: {most_similar_vector}, Most similar index: {most_similar_index}")
-    if most_similar_vector is not None:
-        return faq_entries[most_similar_index]['answer']
+    if similarities[most_similar_idx] > 0.5:
+        return faq_entries[most_similar_idx]['answer']
     else:
         return "Sorry, I don't have an answer for that question."
-
 
 
     # old version of this function ... still working on the similarity stuff

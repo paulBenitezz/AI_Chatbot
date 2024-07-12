@@ -2,13 +2,23 @@ import numpy as np
 import string
 
 from nltk import download
+from nltk.data import find
 from nltk.stem import WordNetLemmatizer, PorterStemmer
 from nltk.corpus import stopwords, wordnet
 
 
 #Download pre-existing datasets
-download('wordnet')
-download('stopwords')
+def check_and_download(resource):
+    try:
+        find(f'corpora/{resource}')
+        print(f"'{resource}' is already downloaded.")
+    except LookupError:
+        print(f"'{resource}' not found. Downloading now...")
+        download(resource)
+        print(f"'{resource}' downloaded successfully.")
+
+check_and_download('wordnet')
+check_and_download('stopwords')
 
 # Initialize lemmatizer and stemmer
 lemmatizer = WordNetLemmatizer()
