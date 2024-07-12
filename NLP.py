@@ -1,10 +1,11 @@
 import numpy as np
 import string
-
+import re
 from nltk import download
 from nltk.data import find
 from nltk.stem import WordNetLemmatizer, PorterStemmer
 from nltk.corpus import stopwords, wordnet
+from sklearn.feature_extraction.text import TfidfVectorizer
 
 
 #Download pre-existing datasets
@@ -29,33 +30,26 @@ stopWords = set(stopwords.words('english'))
 
 #Tokenization
 def tokenize(input):
-    
     # If the input is a string, split it into words
     if isinstance(input, str):
-        words = input.split(' ')
+        words = re.findall(r'\b\w+\b', input.lower())  # Improved tokenization using regex
     # If the input is already a list, assume it's already tokenized
     elif isinstance(input, list):
         words = input
     else:
         raise ValueError("Input must be a string or a list of strings")
     
-    processed_words = []
-    for word in words:
-        if word.isalpha():
-            processed_words.append(word.lower())
-        else:
-            # Remove punctuation from the end of the word
-            word = word.rstrip(string.punctuation)
-            # If the word is now alphabetic, add it to the list
-            if word.isalpha():
-                processed_words.append(word.lower())
-
-    return processed_words
+    return words
     
 #Stop Word Removal
 def removeStopWords(words):
     return [word for word in words if word not in stopWords]
 
+#Custom Stopwords
+def add_custom_stopwords(custom_stopwords):
+    global stopWords
+    stopWords.update(custom_stopwords)
+    
 #Lemmatization
 def lemmatize(word):
     pos = posTag(word)
@@ -95,7 +89,17 @@ def bagOfWords(words):
     print(f"BAG OF WORDS: {bow}")
     return bow
 
+# TF-IDF Vectorization
+def vectorize_texts(texts):
+    vectorizer = TfidfVectorizer()
+    vectors = vectorizer.fit_transform(texts)
+    return vectors, vectorizer
+    
 def vectorize(tokens):
     bow = bagOfWords(tokens)
     vector = np.array(list(bow.values()))
     return vector
+
+
+# Example of adding custom stopwords
+# add_custom_stopwords(['example', 'stopword'])
