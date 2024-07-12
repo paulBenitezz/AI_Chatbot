@@ -1,3 +1,4 @@
+import re
 import NLP
 import numpy as np
 import json
@@ -7,30 +8,34 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 # Assuming existing functions: tokenize, removeStopWords, lemmatize, bagOfWords
 
 def preprocess_input(input_text):
+    input _text = clean(input_text)
     tokens = NLP.tokenize(input_text)
     tokens = NLP.removeStopWords(tokens)
-    #print(f"TOKENS:\n{tokens}")
     processed_tokens = []
     for token in tokens:
         pos = NLP.posTag(token)
-        # Decide if the token should be stemmed
-        # This example stems the token if lemmatization does not change it,
-        # but you might use different criteria
-        if pos == 'verb' or pos == 'adverb':
-            stemmed_token = NLP.stem(token)
-            processed_tokens.append(stemmed_token)
+        if pos in [wordnet.VERB, wordnet.ADV]:
+            processed_tokens.append(NLP.stem(token))
         else:
-            lemmatized_token = NLP.lemmatize(token)
-            processed_tokens.append(lemmatized_token)
-    
+            processed_tokens.append(NLP.lemmatize(token))
     return ' '.join(processed_tokens)
 
+# Vectorize text using TF-IDF
 def vectorize_texts(texts):
-    # using TF-IDF to improve accuraccy
     vectorizer = TfidfVectorizer()
     vectors = vectorizer.fit_transform(texts)
     return vectors, vectorizer
 
+# Function to clean text
+def clean_text(text):
+    text = text.lower()  # Lowercase text
+    text = re.sub(r"http\S+|www\S+|https\S+", '', text, flags=re.MULTILINE)  # Remove URLs
+    text = re.sub(r'\@\w+|\#','', text)  # Remove @mentions and hashtags
+    text = re.sub(r'[^A-Za-z0-9]+', ' ', text)  # Remove special characters
+    text = re.sub(r'\s+', ' ', text).strip()  # Remove extra spaces
+    return text
+
+# Load test set from file
 def load_test_set(file):
     try:
         with open(file, 'r', encoding='utf-8') as f:  # Added encoding to ensure compatibility
@@ -46,19 +51,15 @@ def load_test_set(file):
         print(f"An unexpected error occurred: {e}")
         return []
 
+# Pad or truncate vectors to target length
 def pad_or_truncate(vector, target_length):
-    """Pads or truncates a vector to the target length."""
     vector = list(vector)  # Ensure the vector is a list
-    vector_length = len(vector)
-    if vector_length < target_length:
-        # Pad with zeros
-        return vector + [0] * (target_length - vector_length)
-    elif vector_length > target_length:
-        # Truncate the vector
-        return vector[:target_length]
+    if len(vector) < target_length:
+        return vector + [0] * (target_length - len(vector))
     else:
-        return vector
-        
+        return vector[:target_length]
+
+# Find most similar vector in the test set
 def find_most_similar(input_vector, test_set, similarity_threshold=0.5):
     highest_similarity = -1
     most_similar_vector = None
