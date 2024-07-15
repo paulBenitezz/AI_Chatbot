@@ -5,16 +5,21 @@ import json
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.feature_extraction.text import TfidfVectorizer
 
+#filePath  = r"D:/Github/AI_Chatbot/Data/Data/"
+filePath = r"C:/Users/green/AI_Chatbot/Data/Data/"
+fileName = "Test Dataset.json"
+file = filePath + fileName
+
 # Assuming existing functions: tokenize, removeStopWords, lemmatize, bagOfWords
 
 def preprocess_input(input_text):
-    input _text = clean(input_text)
+    input_text = clean_text(input_text)
     tokens = NLP.tokenize(input_text)
     tokens = NLP.removeStopWords(tokens)
     processed_tokens = []
     for token in tokens:
         pos = NLP.posTag(token)
-        if pos in [wordnet.VERB, wordnet.ADV]:
+        if pos in ['VERB', 'ADV']:
             processed_tokens.append(NLP.stem(token))
         else:
             processed_tokens.append(NLP.lemmatize(token))
@@ -93,7 +98,7 @@ def find_most_similar(input_vector, test_set, similarity_threshold=0.5):
         return None, None
 
 def process_input_to_find_answer(input_text):
-    testDataSet = r"D:\Github\AI_Chatbot\Data\Data\Test Dataset.json" # path will change based where we each have dataset stored
+    testDataSet = file
     preprocessed_input = preprocess_input(input_text)
     print(f"Preprocessed input: {preprocessed_input}")
     input_vector = NLP.vectorize(preprocessed_input)
