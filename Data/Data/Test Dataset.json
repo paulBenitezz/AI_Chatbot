@@ -1,8 +1,8 @@
 {
   "faq": [
     {
-      "question": "How do I declare a major?",
-      "answer": "To declare a major, you need to meet with your academic advisor. They will guide you through the process and help you fill out the necessary paperwork."
+      "question": ["How do I declare a major?"],
+      "answer": ["To declare a major, you need to meet with your academic advisor. They will guide you through the process and help you fill out the necessary paperwork."]
     },
     {
       "question": "Can I change my major?",

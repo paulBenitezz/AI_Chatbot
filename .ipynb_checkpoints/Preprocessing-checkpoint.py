@@ -26,6 +26,7 @@ def preprocess_input(input_text):
     return ' '.join(processed_tokens)
 
 def vectorize_texts(texts):
+    # using TF-IDF to improve accuraccy
     vectorizer = TfidfVectorizer()
     vectors = vectorizer.fit_transform(texts)
     return vectors, vectorizer

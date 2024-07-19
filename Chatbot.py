@@ -6,7 +6,7 @@ def advisor():
     print("Welcome to the console-based chatbot. Type 'exit' to quit.")
     while True:
         # Get user input
-        user_input = input("You: ")
+        user_input = input("\nYou: ")
         if user_input.lower() == 'exit':
             print("Chatbot: Goodbye!")
             break
