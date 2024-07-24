@@ -1,5 +1,5 @@
 {
-   "intents":[
+   "faq":[
  {
    "tag": "greeting",
    "question": [
@@ -18,8 +18,8 @@
       "Hello!",
       "Good to see you again!",
       "Hi there, how can I help?"
-   ],
-   "context_set": ""
+   ]
+   
 },
  {
    "tag": "goodbye",
@@ -42,8 +42,8 @@
       "Talk to you later",
       "Goodbye!",
       "Come back soon"
-   ],
-   "context_set": ""
+   ]
+   
 },
  {
    "tag": "creator",
@@ -67,8 +67,8 @@
    ],
    "answer": [
       "College students"
-   ],
-   "context_set": ""
+   ]
+   
 },
  {
    "tag": "name",
@@ -92,8 +92,8 @@
       "I'm Mind Reader",
       "I am a Chatbot.",
       "I am your helper"
-   ],
-   "context_set": ""
+   ]
+   
 },
  {
    "tag": "hours",
@@ -118,8 +118,8 @@
    ],
    "answer": [
       "College is open 8am-5pm Monday-Saturday!"
-   ],
-   "context_set": ""
+   ]
+   
 },
  {
    "tag": "number",
@@ -142,8 +142,8 @@
    ],
    "answer": [
       "You can contact at: NUMBER"
-   ],
-   "context_set": ""
+   ]
+   
 },
  {
    "tag": "course",
@@ -178,8 +178,8 @@
    ],
    "answer": [
       "Our university offers Information Technology, computer Engineering, Mechanical engineering,Chemical engineering, Civil engineering and extc Engineering."
-   ],
-   "context_set": ""
+   ]
+   
 },
  {
    "tag": "fees",
@@ -210,8 +210,8 @@
    ],
    "answer": [
       "For Fee detail visit <a target=\"_blank\" href=\"LINK\"> here</a>"
-   ],
-   "context_set": ""
+   ]
+   
 },
  {
    "tag": "location",
@@ -233,8 +233,8 @@
    ],
    "answer": [
       "<a target=\"_blank\" href=\"ADD YOU GOOGLE MAP LINK HERE\"> here</a>"
-   ],
-   "context_set": ""
+   ]
+   
 },
  {
    "tag": "hostel",
@@ -264,8 +264,8 @@
    ],
    "answer": [
       "For hostel detail visit <a target=\"_blank\" href=\"ADD YOUR HOSTEL DETAIL PDF LINK OR ANY INFORMATION LINK OR ADD YOU OWN ANSWERS\"> here</a>"
-   ],
-   "context_set": ""
+   ]
+   
 },
  {
    "tag": "event",
@@ -284,8 +284,8 @@
    ],
    "answer": [
       "For event detail visit <a target=\"_blank\" href=\"ADD YOUR FUNCTIONS LINK OR YOUR OWN RESPONSE\"> here</a>"
-   ],
-   "context_set": ""
+   ]
+   
 },
  {
    "tag": "document",
@@ -306,8 +306,8 @@
    ],
    "answer": [
       "To know more about document required visit <a target=\"_blank\" href=\"ADD LINK OF ADMISSION GUIDANCE DOCUMENT FROM YOUR UNIVERSITY WEBSITE\"> here</a>"
-   ],
-   "context_set": ""
+   ]
+   
 },
  {
    "tag": "floors",
@@ -322,8 +322,8 @@
    ],
    "answer": [
       "My College has total 2 floors "
-   ],
-   "context_set": ""
+   ]
+   
 },
  {
    "tag": "syllabus",
@@ -338,8 +338,8 @@
    ],
    "answer": [
       "Timetable provide direct to the students OR To know about syllabus visit <a target=\"_blank\" href=\"TIMETABLE LINK\"> here</a>"
-   ],
-   "context_set": ""
+   ]
+   
 },
  {
    "tag": "library",
@@ -361,8 +361,8 @@
    ],
    "answer": [
       "There is one huge and spacious library.timings are 8am to 6pm and for more visit <a target=\"blank\" href=\"ADD LIBRARY DETAIL LINK\">here</a>"
-   ],
-   "context_set": ""
+   ]
+   
 },
  {
    "tag": "infrastructure",
@@ -373,8 +373,8 @@
    ],
    "answer": [
       "Our University has Excellent Infrastructure. Campus is clean. Good IT Labs With Good Speed of Internet connection"
-   ],
-   "context_set": ""
+   ]
+   
 },
  {
    "tag": "canteen",
@@ -393,8 +393,8 @@
    ],
    "answer": [
       "Our university has canteen with variety of food available"
-   ],
-   "context_set": ""
+   ]
+   
 },
  {
    "tag": "menu",
@@ -409,8 +409,8 @@
    ],
    "answer": [
       "we serve Franky, Locho, Alu-puri, Kachori, Khavsa, Thaali and many more on menu"
-   ],
-   "context_set": ""
+   ]
+   
 },
  {
    "tag": "placement",
@@ -427,8 +427,8 @@
    ],
    "answer": [
       "To know about placement visit <a target=\"_blank\" href=\"PLACEMENT INFORMATION LINK FROM YOUR UNIVERSITY WEBSITE IF THEY HAVE\">here</a>"
-   ],
-   "context_set": ""
+   ]
+   
 },
  {
    "tag": "ithod",
@@ -440,8 +440,8 @@
    ],
    "answer": [
       "All engineering departments have only one hod XYZ who available on (Place name)"
-   ],
-   "context_set": ""
+   ]
+   
 },
  {
    "tag": "computerhod",
@@ -453,8 +453,8 @@
    ],
    "answer": [
       "All engineering departments have only one hod XYZ who available on (PLACE NAME)"
-   ],
-   "context_set": ""
+   ]
+   
 },
  {
    "tag": "extchod",
@@ -466,8 +466,8 @@
    ],
    "answer": [
       "Different school wise hod are different.So be more clear with your school or department"
-   ],
-   "context_set": ""
+   ]
+   
 },
  {
    "tag": "principal",
@@ -482,8 +482,8 @@
    ],
    "answer": [
       "XYZ is college principal and if you need any help then call your branch hod first.That is more appropriate"
-   ],
-   "context_set": ""
+   ]
+   
 },
  {
    "tag": "sem",
@@ -502,8 +502,8 @@
    ],
    "answer": [
       "Here is the Academic Calendar  <a target=\"_blank\" href=\"YOUR ACADEMIC CALENDER\">website</a>"
-   ],
-   "context_set": ""
+   ]
+   
 },
  {
    "tag": "admission",
@@ -517,8 +517,8 @@
    ],
    "answer": [
       "Application can also be submitted online through the Unversity's  <a target=\"_blank\" href=\"LINK OF ADMISSION DOCUMENT\">website</a>"
-   ],
-   "context_set": ""
+   ]
+   
 },
  {
    "tag": "scholarship",
@@ -552,8 +552,8 @@
    ],
    "answer": [
       "Many government scholarships are supported by our university. For details and updates visit <a target=\"_blank\" href=\"(SCHOLARSHIP DETAILS LINK)\">here</a>"
-   ],
-   "context_set": ""
+   ]
+   
 },
  {
    "tag": "facilities",
@@ -566,8 +566,8 @@
    ],
    "answer": [
       "Our university's Engineering department provides fully AC Lab with internet connection, smart classroom, Auditorium, library,canteen"
-   ],
-   "context_set": ""
+   ]
+   
 },
  {
    "tag": "college intake",
@@ -584,8 +584,8 @@
    ],
    "answer": [
       "For IT, Computer and extc 60 per branch and seat may be differ for different department."
-   ],
-   "context_set": ""
+   ]
+   
 },
  {
    "tag": "uniform",
@@ -602,8 +602,8 @@
    ],
    "answer": [
       "ENTER YOUR OWN UNIVERSITY UNIFORM CIRCULER"
-   ],
-   "context_set": ""
+   ]
+   
 },
  {
    "tag": "committee",
@@ -617,8 +617,8 @@
    ],
    "answer": [
       "For the various committe in college contact this number: ADD NUMBER"
-   ],
-   "context_set": ""
+   ]
+   
 },
  {
    "tag": "random",
@@ -629,8 +629,8 @@
    ],
    "answer": [
       "I am not program for this, please ask appropriate query"
-   ],
-   "context_set": ""
+   ]
+   
 },
  {
    "tag": "swear",
@@ -648,8 +648,8 @@
    "answer": [
       "please use appropriate language",
       "Maintaining decency would be appreciated"
-   ],
-   "context_set": ""
+   ]
+   
 },
  {
    "tag": "vacation",
@@ -669,8 +669,8 @@
    ],
    "answer": [
       "Academic calender is given to you by your class-soordinators after you join your respective classes"
-   ],
-   "context_set": ""
+   ]
+   
 },
  {
    "tag": "sports",
@@ -685,8 +685,8 @@
    ],
    "answer": [
       "Our university encourages all-round development of students and hence provides sports facilities in the campus. For more details visit<a target=\"_blank\" href=/\"(LINK IF HAVE)\">here</a>"
-   ],
-   "context_set": ""
+   ]
+   
 },
  {
    "tag": "salutaion",
@@ -708,8 +708,8 @@
    "answer": [
       "I am glad I helped you",
       "welcome, anything else i can assist you with?"
-   ],
-   "context_set": ""
+   ]
+   
 },
  {
    "tag": "task",
@@ -724,8 +724,8 @@
    "answer": [
       "I can answer to low-intermediate questions regarding college",
       "You can ask me questions regarding college, and i will try to answer them"
-   ],
-   "context_set": ""
+   ]
+   
 },
  {
    "tag": "ragging",
@@ -743,8 +743,8 @@
    ],
    "answer": [
       "We are Proud to tell you that our college provides ragging free environment, and we have strict rules against ragging"
-   ],
-   "context_set": ""
+   ]
+   
 },
  {
    "tag": "hod",
@@ -755,8 +755,8 @@
    ],
    "answer": [
       "HODs differ for each branch, please be more specific like: (HOD it)"
-   ],
-   "context_set": ""
+   ]
+   
 }
 ]
 }

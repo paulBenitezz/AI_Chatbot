@@ -1,56 +1,69 @@
 {
   "faq": [
     {
+	  "tag": "declare",
       "question": ["How do I declare a major?"],
       "answer": ["To declare a major, you need to meet with your academic advisor. They will guide you through the process and help you fill out the necessary paperwork."]
     },
     {
-      "question": "Can I change my major?",
-      "answer": "Yes, you can change your major. However, the process may vary depending on your university's policies. It's best to schedule a meeting with your academic advisor to discuss your options and the steps involved."
+	  "tag": "change",
+      "question": ["Can I change my major?"],
+      "answer": ["Yes, you can change your major. However, the process may vary depending on your university's policies. It's best to schedule a meeting with your academic advisor to discuss your options and the steps involved."]
     },
     {
-      "question": "How many credits do I need to graduate?",
-      "answer": "The number of credits required for graduation varies depending on your program and university. You can find this information in the university's course catalog or by consulting with your academic advisor."
+	  "tag": "credits",
+      "question": ["How many credits do I need to graduate?"],
+      "answer": ["The number of credits required for graduation varies depending on your program and university. You can find this information in the university's course catalog or by consulting with your academic advisor."]
     },
     {
-      "question": "How do I register for classes?",
-      "answer": "To register for classes, you will typically use your university's online registration system. Your academic advisor can guide you through the process and help you select the appropriate courses based on your program requirements."
+      "tag": "register",
+	  "question": ["How do I register for classes?"],
+      "answer": ["To register for classes, you will typically use your university's online registration system. Your academic advisor can guide you through the process and help you select the appropriate courses based on your program requirements."]
     },
     {
-      "question": "What should I do if I'm struggling with a course?",
-      "answer": "If you're struggling with a course, it's important to reach out for help as soon as possible. You can start by speaking with your professor or attending office hours. Additionally, your academic advisor can provide guidance and suggest resources such as tutoring services or study groups."
+      "tag": "struggle",
+	  "question": ["What should I do if I'm struggling with a course?"],
+      "answer": ["If you're struggling with a course, it's important to reach out for help as soon as possible. You can start by speaking with your professor or attending office hours. Additionally, your academic advisor can provide guidance and suggest resources such as tutoring services or study groups."]
     },
     {
-      "question": "How can I track my progress towards graduation?",
-      "answer": "You can track your progress towards graduation by reviewing your degree audit or academic transcript. Your academic advisor can help you interpret these documents and ensure that you're on track to meet all the necessary requirements."
+      "tag": "progress",
+	  "question": ["How can I track my progress towards graduation?"],
+      "answer": ["You can track your progress towards graduation by reviewing your degree audit or academic transcript. Your academic advisor can help you interpret these documents and ensure that you're on track to meet all the necessary requirements."]
     },
     {
-      "question": "Can I study abroad?",
-      "answer": "Yes, many universities offer study abroad programs. To explore this option, you should consult with your academic advisor to discuss the available opportunities, eligibility requirements, and how studying abroad may impact your academic plan."
+      "tag": "abroad",
+	  "question": ["Can I study abroad?"],
+      "answer": ["Yes, many universities offer study abroad programs. To explore this option, you should consult with your academic advisor to discuss the available opportunities, eligibility requirements, and how studying abroad may impact your academic plan."]
     },
     {
-      "question": "What resources are available for career planning?",
-      "answer": "Your university's career services office can provide resources and guidance for career planning. They can assist with resume writing, interview preparation, job search strategies, and more. Your academic advisor can help connect you with these resources."
+      "tag": "career",
+	  "question": ["What resources are available for career planning?"],
+      "answer": ["Your university's career services office can provide resources and guidance for career planning. They can assist with resume writing, interview preparation, job search strategies, and more. Your academic advisor can help connect you with these resources."]
     },
     {
-      "question": "How can I apply for scholarships or financial aid?",
-      "answer": "To apply for scholarships or financial aid, you should start by completing the Free Application for Federal Student Aid (FAFSA). Your academic advisor can provide information on additional scholarship opportunities and guide you through the application process."
+      "tag": "apply",
+	  "question": ["How can I apply for scholarships or financial aid?"],
+      "answer": ["To apply for scholarships or financial aid, you should start by completing the Free Application for Federal Student Aid (FAFSA). Your academic advisor can provide information on additional scholarship opportunities and guide you through the application process."]
     },
     {
-      "question": "How do I withdraw from a course?",
-      "answer": "If you need to withdraw from a course, you should consult with your academic advisor. They can explain the withdrawal policies, discuss the potential impact on your academic progress, and guide you through the necessary steps."
+      "tag": "withdraw",
+	  "question": ["How do I withdraw from a course?"],
+      "answer": ["If you need to withdraw from a course, you should consult with your academic advisor. They can explain the withdrawal policies, discuss the potential impact on your academic progress, and guide you through the necessary steps."]
     },
     {
-      "question": "How can I schedule a meeting with my academic advisor?",
-      "answer": "To schedule a meeting with your academic advisor, you can usually do so through your university's online appointment scheduling system. Alternatively, you can contact your advisor via email or phone to request a meeting."
+      "tag": "meeting",
+	  "question": ["How can I schedule a meeting with my academic advisor?"],
+      "answer": ["To schedule a meeting with your academic advisor, you can usually do so through your university's online appointment scheduling system. Alternatively, you can contact your advisor via email or phone to request a meeting."]
     },
     {
-      "question": "What should I do if I have a conflict with my academic advisor?",
-      "answer": "If you have a conflict with your academic advisor, it's important to address the issue and find a resolution. You can start by scheduling a meeting to discuss your concerns and try to find common ground. If the conflict persists, you may consider reaching out to the department chair or another faculty member for assistance."
+      "tag": "conflict",
+	  "question": ["What should I do if I have a conflict with my academic advisor?"],
+      "answer": ["If you have a conflict with your academic advisor, it's important to address the issue and find a resolution. You can start by scheduling a meeting to discuss your concerns and try to find common ground. If the conflict persists, you may consider reaching out to the department chair or another faculty member for assistance."]
     },
     {
-      "question": "How can I request a letter of recommendation from my academic advisor?",
-      "answer": "To request a letter of recommendation from your academic advisor, you should schedule a meeting to discuss your request. Be prepared to provide information about the purpose of the recommendation, any specific requirements, and your accomplishments or experiences that you would like the advisor to highlight in the letter."
+      "tag": "recommendation",
+	  "question": ["How can I request a letter of recommendation from my academic advisor?"],
+      "answer": ["To request a letter of recommendation from your academic advisor, you should schedule a meeting to discuss your request. Be prepared to provide information about the purpose of the recommendation, any specific requirements, and your accomplishments or experiences that you would like the advisor to highlight in the letter."]
     }
   ]
 }
