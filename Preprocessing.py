@@ -76,7 +76,7 @@ def process_input_to_find_answer(input_text, model_version=ML.get_latest_model_v
     if vectorizer is None:
         vectorizer = TfidfVectorizer()
 
-    test_set = load_test_set('Data/Data/Dataset.json')
+    test_set = load_test_set(file)
     if 'faq' not in test_set or not isinstance(test_set['faq'], list):
         return "Error: 'faq' key not found or not in the expected format in the test set."
 
@@ -98,15 +98,14 @@ def process_input_to_find_answer(input_text, model_version=ML.get_latest_model_v
     if similarities[most_similar_idx] > 0.5:
         return faq_entries[most_similar_idx]['answer']
     else:
-        # Load the model
+        #Load model
         num_classes = len(set([entry['tag'] for entry in faq_entries]))
         model = ML.load_model(model_version, vectors.shape[1], num_classes)
         
-        # Make predictions
+        #Make predictions
         predictions = model.predict(input_vector)
-        predicted_class = np.argmax(predictions, axis=1)[0]  # predicted_class is an integer
+        predicted_class = np.argmax(predictions, axis=1)[0]
         
-        # Return the answer corresponding to the predicted class
         return faq_entries[predicted_class]['answer']
 
 
