@@ -1,6 +1,7 @@
 import NLP
 import numpy as np
 import json
+import random
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.feature_extraction.text import TfidfVectorizer
 
@@ -26,6 +27,7 @@ def preprocess_input(input_text):
     return ' '.join(processed_tokens)
 
 def vectorize_texts(texts):
+    # using TF-IDF to improve accuraccy
     vectorizer = TfidfVectorizer()
     vectors = vectorizer.fit_transform(texts)
     return vectors, vectorizer
@@ -91,32 +93,37 @@ def find_most_similar(input_vector, test_set, similarity_threshold=0.5):
         return None, None
 
 def process_input_to_find_answer(input_text):
-    testDataSet = r"D:\Github\AI_Chatbot\Data\Data\Test Dataset.json" # path will change based where we each have dataset stored
+    testDataSet = r"D:\Github\AI_Chatbot\Data\Data\Dataset.json"  # Path to the dataset
+
     preprocessed_input = preprocess_input(input_text)
     print(f"Preprocessed input: {preprocessed_input}")
     input_vector = NLP.vectorize(preprocessed_input)
     print(f"input_vector: {input_vector}")
+
 
     test_set = load_test_set(testDataSet)
     
     if 'faq' not in test_set or not isinstance(test_set['faq'], list):
         return "Error: 'faq' key not found or not in the expected format in the test set."
 
-    # checking only faq entries for now :p
     faq_entries = test_set['faq']
-    tokenized_questions = [preprocess_input(entry['question']) for entry in faq_entries]
+    all_questions = [q for entry in faq_entries for q in entry['question']]
     
-    vectors, vectorizer = vectorize_texts(tokenized_questions)
+    vectors, vectorizer = vectorize_texts(all_questions)
     input_vector = vectorizer.transform([preprocessed_input])
     
     similarities = cosine_similarity(input_vector, vectors).flatten()
     most_similar_idx = similarities.argmax()
 
     if similarities[most_similar_idx] > 0.5:
-        return faq_entries[most_similar_idx]['answer']
+        # Find the entry that corresponds to the most similar question
+        accumulated_questions = 0
+        for entry in faq_entries:
+            if accumulated_questions + len(entry['question']) > most_similar_idx:
+                return random.choice(entry['answer'])
+            accumulated_questions += len(entry['question'])
     else:
         return "Sorry, I don't have an answer for that question."
-
 
     # old version of this function ... still working on the similarity stuff
 '''        
