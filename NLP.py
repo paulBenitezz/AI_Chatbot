@@ -1,5 +1,4 @@
 import numpy as np
-import string
 import re
 from nltk import download
 from nltk.data import find
@@ -21,7 +20,7 @@ def check_and_download(resource):
 check_and_download('wordnet')
 check_and_download('stopwords')
 
-# Initialize lemmatizer and stemmer
+#Initialize lemmatizer and stemmer
 lemmatizer = WordNetLemmatizer()
 stemmer = PorterStemmer()
 
@@ -40,7 +39,7 @@ def tokenize(input):
         raise ValueError("Input must be a string or a list of strings")
     
     return words
-    
+
 #Stop Word Removal
 def removeStopWords(words):
     return [word for word in words if word not in stopWords]
@@ -49,12 +48,12 @@ def removeStopWords(words):
 def add_custom_stopwords(custom_stopwords):
     global stopWords
     stopWords.update(custom_stopwords)
-    
+
 #Lemmatization
 def lemmatize(word):
     pos = posTag(word)
     return lemmatizer.lemmatize(word, pos)
-        
+
 #Stemming
 def stem(word):
     pos = posTag(word)
@@ -94,12 +93,17 @@ def vectorize_texts(texts):
     vectorizer = TfidfVectorizer()
     vectors = vectorizer.fit_transform(texts)
     return vectors, vectorizer
-    
+
 def vectorize(tokens):
     bow = bagOfWords(tokens)
     vector = np.array(list(bow.values()))
     return vector
 
-
-# Example of adding custom stopwords
-# add_custom_stopwords(['example', 'stopword'])
+# Function to clean text
+def clean_text(text):
+    text = text.lower()  # Lowercase text
+    text = re.sub(r"http\S+|www\S+|https\S+", '', text, flags=re.MULTILINE)  # Remove URLs
+    text = re.sub(r'\@\w+|\#','', text)  # Remove @mentions and hashtags
+    text = re.sub(r'[^A-Za-z0-9]+', ' ', text)  # Remove special characters
+    text = re.sub(r'\s+', ' ', text).strip()  # Remove extra spaces
+    return text
