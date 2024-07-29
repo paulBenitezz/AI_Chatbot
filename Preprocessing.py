@@ -1,9 +1,11 @@
 import NLP
 from NLP import TfidfVectorizer
-import ML
+from ML import load_model, get_latest_model_version
 import numpy as np
 import json
 from sklearn.metrics.pairwise import cosine_similarity
+from tensorflow.keras.preprocessing.text import Tokenizer #type: ignore
+from tensorflow.keras.preprocessing.sequence import pad_sequences as pad #type: ignore
 
 #Group member file paths
 #filePath  = r"D:/Github/AI_Chatbot/Data/Data/"
@@ -29,6 +31,17 @@ def preprocess_input(input_text):
     processed_tokens = [NLP.stem(token) if NLP.posTag(token) in ['VERB', 'ADV'] else NLP.lemmatize(token) for token in tokens]
 
     return ' '.join(processed_tokens)
+
+def preprocess_and_vectorize_array(texts, max_features, maxlen):
+    from Preprocessing import preprocess_input
+    # Preprocess the texts
+    #processed_texts = [preprocess_input(text) for text in texts]
+    
+    # Vectorize the texts
+    tokenizer = Tokenizer(num_words=max_features)
+    #sequences = tokenizer.texts_to_sequences(processed_texts)
+    padded_sequences = pad(texts, maxlen=maxlen)
+    return padded_sequences, tokenizer
 
 def load_test_set(file):
     try:
@@ -72,7 +85,7 @@ def find_most_similar(input_vector, test_set, similarity_threshold=0.5):
     else:
         return None, None
 
-def process_input_to_find_answer(input_text, model_version=ML.get_latest_model_version(), vectorizer=None):
+def process_input_to_find_answer(input_text, model_version=get_latest_model_version(), vectorizer=None):
     if vectorizer is None:
         vectorizer = TfidfVectorizer()
 
@@ -100,7 +113,7 @@ def process_input_to_find_answer(input_text, model_version=ML.get_latest_model_v
     else:
         #Load model
         num_classes = len(set([entry['tag'] for entry in faq_entries]))
-        model = ML.load_model(model_version, vectors.shape[1], num_classes)
+        model = load_model(model_version, vectors.shape[1], num_classes)
         
         #Make predictions
         predictions = model.predict(input_vector)

@@ -101,9 +101,12 @@ def vectorize(tokens):
 
 # Function to clean text
 def clean_text(text):
+    if isinstance(text, np.ndarray):
+        text = ' '.join(map(str, text))
     text = text.lower()  # Lowercase text
     text = re.sub(r"http\S+|www\S+|https\S+", '', text, flags=re.MULTILINE)  # Remove URLs
     text = re.sub(r'\@\w+|\#','', text)  # Remove @mentions and hashtags
     text = re.sub(r'[^A-Za-z0-9]+', ' ', text)  # Remove special characters
     text = re.sub(r'\s+', ' ', text).strip()  # Remove extra spaces
     return text
+
