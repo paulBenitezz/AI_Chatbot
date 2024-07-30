@@ -3,13 +3,14 @@ from NLP import TfidfVectorizer
 from ML import load_model, get_latest_model_version
 import numpy as np
 import json
+import random
 from sklearn.metrics.pairwise import cosine_similarity
 from tensorflow.keras.preprocessing.text import Tokenizer #type: ignore
 from tensorflow.keras.preprocessing.sequence import pad_sequences as pad #type: ignore
 
 #Group member file paths
-#filePath  = r"D:/Github/AI_Chatbot/Data/Data/"
-filePath = r"C:/Users/green/AI_Chatbot/Data/Data/"
+filePath  = r"D:/Github/AI_Chatbot/Data/Data/"
+#filePath = r"C:/Users/green/AI_Chatbot/Data/Data/"
 
 #Files
 #fileName = "Test Dataset.json" ---- Original Test File
@@ -109,7 +110,7 @@ def process_input_to_find_answer(input_text, model_version=get_latest_model_vers
     most_similar_idx = similarities.argmax()
 
     if similarities[most_similar_idx] > 0.5:
-        return faq_entries[most_similar_idx]['answer']
+        answer = faq_entries[most_similar_idx]['answer']
     else:
         #Load model
         num_classes = len(set([entry['tag'] for entry in faq_entries]))
@@ -119,8 +120,11 @@ def process_input_to_find_answer(input_text, model_version=get_latest_model_vers
         predictions = model.predict(input_vector)
         predicted_class = np.argmax(predictions, axis=1)[0]
         
-        return faq_entries[predicted_class]['answer']
+        answer = faq_entries[predicted_class]['answer']
+    
+   
 
+    return random.choice(answer)
 
 
 
