@@ -97,36 +97,38 @@ def process_input_to_find_answer(input_text, model_version=get_latest_model_vers
     faq_entries = test_set['faq']
     tokenized_questions = [preprocess_input(entry['question']) for entry in faq_entries]
 
-    #Fit the vectorizer with the tokenized questions
+    # Fit the vectorizer with the tokenized questions
     vectorizer.fit(tokenized_questions)
 
-    #Process and vectorize input ---- Maybe add this block to new function?
+    # Process and vectorize input
     preprocessed_input = preprocess_input(input_text)
     input_vector = vectorizer.transform([preprocessed_input]).toarray()
     vectors = vectorizer.transform(tokenized_questions).toarray()
 
-    #Similarities always comes out less than 0.5 for some reason, should we change the threshold or strictly use ML option for all predicitons
+    # Calculate similarity
     similarities = cosine_similarity(input_vector, vectors).flatten()
     most_similar_idx = similarities.argmax()
 
-    if similarities[most_similar_idx] > 0.5:
+ 
+
+    if similarities[most_similar_idx] > 0.3:  # Adjusted threshold
         answer = faq_entries[most_similar_idx]['answer']
     else:
-        #Load model
+        # Load model
         num_classes = len(set([entry['tag'] for entry in faq_entries]))
-        model = load_model(model_version, vectors.shape[1], num_classes)
+        model = load_model(model_version)
         
-        #Make predictions
+        # Make predictions
         predictions = model.predict(input_vector)
         predicted_class = np.argmax(predictions, axis=1)[0]
         
+        print(f"Predictions: {predictions}")
+        print(f"Predicted Class: {predicted_class}")
+        
         answer = faq_entries[predicted_class]['answer']
     
-   
-
+    print(f"Answer: {answer}")
     return random.choice(answer)
-
-
 
 #------------old version of this function ... still working on the similarity stuff------------
 '''

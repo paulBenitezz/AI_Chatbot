@@ -15,7 +15,7 @@ def advisor():
             break
         
         #Process input to generate answer
-        response = process_input_to_find_answer(user_input)
+        response = process_input_to_find_answer(user_input, model_version = 2)
         #response = "I'm an idiot."
 
         #Print response
