@@ -66,7 +66,7 @@
       "who designed you"
    ],
    "answer": [
-      "College students"
+      "Team 13"
    ]
    
 },
@@ -113,11 +113,11 @@
       "when should i come to college",
       "when should i attend college",
       "what is my college time",
-      "college timing",
+      "UTSA timing",
       "timing college"
    ],
    "answer": [
-      "College is open 8am-5pm Monday-Saturday!"
+      "UTSA is open 8am-5pm Monday-Saturday!"
    ]
    
 },
@@ -154,17 +154,17 @@
       "what are the courses offered in your college?",
       "courses?",
       "courses offered",
-      "courses offered in (your univrsity(UNI) name)",
+      "courses offered in UTSA",
       "courses you offer",
       "branches?",
-      "courses available at UNI?",
+      "courses available at UTSA?",
       "branches available at your college?",
-      "what are the courses in UNI?",
-      "what are branches in UNI?",
-      "what are courses in UNI?",
-      "branches available in UNI?",
-      "can you tell me the courses available in UNI?",
-      "can you tell me the branches available in UNI?",
+      "what are the courses in UTSA?",
+      "what are branches in UTSA?",
+      "what are courses in UTSA?",
+      "branches available in UTSA?",
+      "can you tell me the courses available in UTSA?",
+      "can you tell me the branches available in UTSA?",
       "computer engineering?",
       "computer",
       "Computer engineering?",
@@ -209,7 +209,7 @@
       "fees for non-Ac room for boys"
    ],
    "answer": [
-      "For Fee detail visit <a target=\"_blank\" href=\"LINK\"> here</a>"
+      "For Fee detail visit <a target=\"_blank\" href=\"https://www.utsa.edu/financialaffairs/services/fiscal-services/tuition-fees/index.html\"> here</a>"
    ]
    
 },
@@ -218,7 +218,7 @@
    "question": [
       "where is the college located",
       "college is located at",
-      "where is college",
+      "where is UTSA",
       "where is college located",
       "address of college",
       "how to reach college",
@@ -232,7 +232,7 @@
       "location"
    ],
    "answer": [
-      "<a target=\"_blank\" href=\"ADD YOU GOOGLE MAP LINK HERE\"> here</a>"
+      "We are located at '1 UTSA Circle, San Antonio, TX 78249'"
    ]
    
 },
@@ -317,7 +317,7 @@
       "How many floors does college have",
       "floors in college",
       "floors in college",
-      "how tall is UNI's College of Engineering college building",
+      "how tall is UTSA's College of Engineering college building",
       "floors"
    ],
    "answer": [

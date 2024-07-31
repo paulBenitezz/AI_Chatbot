@@ -64,7 +64,7 @@
                 "who designed you"
             ],
             "answer": [
-                "College students"
+                "UTSA students"
             ]
         },
         {
@@ -85,29 +85,26 @@
                 "what are you"
             ],
             "answer": [
-                "You can call me Mind Reader.",
-                "I'm Mind Reader",
-                "I am a Chatbot.",
-                "I am your helper"
+                "I am a chatbot made for a Computer Science AI course"
             ]
         },
         {
             "tag": "hours",
             "question": [
-                "timing of college",
-                "what is college timing",
+                "timing of UTSA",
+                "what is UTSA timing",
                 "working days",
                 "when are you guys open",
                 "what are your hours",
                 "hours of operation",
-                "when is the college open",
-                "college timing",
-                "what about college timing",
-                "is college open on saturday",
-                "tell something about college timing",
-                "what is the college  hours",
-                "when should i come to college",
-                "when should i attend college",
+                "when is the UTSA open",
+                "UTSA timing",
+                "what about UTSA timing",
+                "is UTSA open on saturday",
+                "tell something about UTSA timing",
+                "what is the UTSA  hours",
+                "when should i come to UTSA",
+                "when should i attend UTSA",
                 "what is my college time",
                 "college timing",
                 "timing college"
@@ -121,13 +118,13 @@
             "question": [
                 "more info",
                 "contact info",
-                "how to contact college",
-                "college telephone number",
-                "college number",
+                "how to contact UTSA",
+                "UTSA telephone number",
+                "UTSA number",
                 "What is your contact no",
                 "Contact number?",
                 "how to call you",
-                "College phone no?",
+                "UTSA phone no?",
                 "how can i contact you",
                 "Can i get your phone number",
                 "how can i call you",
@@ -148,17 +145,17 @@
                 "what are the courses offered in your college?",
                 "courses?",
                 "courses offered",
-                "courses offered in (your univrsity(UNI) name)",
+                "courses offered in (your univrsity(UTSA) name)",
                 "courses you offer",
                 "branches?",
-                "courses available at UNI?",
+                "courses available at UTSA?",
                 "branches available at your college?",
-                "what are the courses in UNI?",
-                "what are branches in UNI?",
-                "what are courses in UNI?",
-                "branches available in UNI?",
-                "can you tell me the courses available in UNI?",
-                "can you tell me the branches available in UNI?",
+                "what are the courses in UTSA?",
+                "what are branches in UTSA?",
+                "what are courses in UTSA?",
+                "branches available in UTSA?",
+                "can you tell me the courses available in UTSA?",
+                "can you tell me the branches available in UTSA?",
                 "computer engineering?",
                 "computer",
                 "Computer engineering?",
@@ -208,18 +205,18 @@
         {
             "tag": "location",
             "question": [
-                "where is the college located",
-                "college is located at",
-                "where is college",
-                "where is college located",
-                "address of college",
-                "how to reach college",
-                "college location",
-                "college address",
-                "wheres the college",
-                "how can I reach college",
-                "whats is the college address",
-                "what is the address of college",
+                "where is the UTSA located",
+                "UTSA is located at",
+                "where is UTSA",
+                "where is UTSA located",
+                "address of UTSA",
+                "how to reach UTSA",
+                "UTSA location",
+                "UTSA address",
+                "wheres the UTSA",
+                "how can I reach UTSA",
+                "whats is the UTSA address",
+                "what is the address of UTSA",
                 "address",
                 "location"
             ],
@@ -236,7 +233,7 @@
                 "hostel address",
                 "hostel facilities",
                 "hostel fees",
-                "Does college provide hostel",
+                "Does UTSA provide hostel",
                 "Is there any hostel",
                 "Where is hostel",
                 "do you have hostel",
@@ -246,12 +243,12 @@
                 "what is the hostel fee",
                 "how to get in hostel",
                 "what is the hostel address",
-                "how far is hostel from college",
-                "hostel college distance",
+                "how far is hostel from UTSA",
+                "hostel UTSA distance",
                 "where is the hostel",
                 "how big is the hostel",
-                "distance between college and hostel",
-                "distance between hostel and college"
+                "distance between UTSA and hostel",
+                "distance between hostel and UTSA"
             ],
             "answer": [
                 "For hostel detail visit <a target=\"_blank\" href=\"ADD YOUR HOSTEL DETAIL PDF LINK OR ANY INFORMATION LINK OR ADD YOU OWN ANSWERS\"> here</a>"
@@ -262,10 +259,10 @@
             "question": [
                 "events organised",
                 "list of events",
-                "list of events organised in college",
-                "list of events conducted in college",
-                "What events are conducted in college",
-                "Are there any event held at college",
+                "list of events organised in UTSA",
+                "list of events conducted in UTSA",
+                "What events are conducted in UTSA",
+                "Are there any event held at UTSA",
                 "Events?",
                 "functions",
                 "what are the events",
@@ -302,10 +299,10 @@
             "question": [
                 "size of campus",
                 "building size",
-                "How many floors does college have",
-                "floors in college",
-                "floors in college",
-                "how tall is UNI's College of Engineering college building",
+                "How many floors does UTSA have",
+                "floors in UTSA",
+                "floors in UTSA",
+                "how tall is UTSA's College of Engineering college building",
                 "floors"
             ],
             "answer": [
@@ -335,7 +332,7 @@
                 "library facilities",
                 "do you have library",
                 "does the college have library facility",
-                "college library",
+                "UTSA library",
                 "where can i get books",
                 "book facility",
                 "Where is library",
@@ -352,9 +349,9 @@
         {
             "tag": "infrastructure",
             "question": [
-                "how is college infrastructure",
+                "how is UTSA infrastructure",
                 "infrastructure",
-                "college infrastructure"
+                "UTSA infrastructure"
             ],
             "answer": [
                 "Our University has Excellent Infrastructure. Campus is clean. Good IT Labs With Good Speed of Internet connection"
@@ -367,8 +364,8 @@
                 "canteen facilities",
                 "canteen facility",
                 "is there any canteen",
-                "Is there a cafetaria in college",
-                "Does college have canteen",
+                "Is there a cafetaria in UTSA",
+                "Does UTSA have canteen",
                 "Where is canteen",
                 "where is cafetaria",
                 "canteen",
@@ -385,8 +382,8 @@
                 "food menu",
                 "food in canteen",
                 "Whats there on menu",
-                "what is available in college canteen",
-                "what foods can we get in college canteen",
+                "what is available in UTSA canteen",
+                "what foods can we get in UTSA canteen",
                 "food variety",
                 "What is there to eat?"
             ],
@@ -397,8 +394,8 @@
         {
             "tag": "placement",
             "question": [
-                "What is college placement",
-                "Which companies visit in college",
+                "What is UTSA placement",
+                "Which companies visit in UTSA",
                 "What is average package",
                 "companies visit",
                 "package",
@@ -453,13 +450,13 @@
                 "what is the name of principal",
                 "whatv is the principal name",
                 "principal name",
-                "Who is college principal",
+                "Who is UTSA principal",
                 "Where is principal's office",
                 "principal",
                 "name of principal"
             ],
             "answer": [
-                "XYZ is college principal and if you need any help then call your branch hod first.That is more appropriate"
+                "XYZ is UTSA principal and if you need any help then call your branch hod first.That is more appropriate"
             ]
         },
         {
@@ -486,7 +483,7 @@
             "question": [
                 "what is the process of admission",
                 "what is the admission process",
-                "How to take admission in your college",
+                "How to take admission in your UTSA",
                 "What is the process for admission",
                 "admission",
                 "admission process"
@@ -532,9 +529,9 @@
         {
             "tag": "facilities",
             "question": [
-                "What facilities college provide",
-                "College facility",
-                "What are college facilities",
+                "What facilities UTSA provide",
+                "UTSA facility",
+                "What are UTSA facilities",
                 "facilities",
                 "facilities provided"
             ],
@@ -562,32 +559,32 @@
         {
             "tag": "uniform",
             "question": [
-                "college dress code",
-                "college dresscode",
+                "UTSA dress code",
+                "UTSA dresscode",
                 "what is the uniform",
                 "can we wear casuals",
-                "Does college have an uniform",
+                "Does UTSA have an uniform",
                 "Is there any uniform",
                 "uniform",
                 "what about uniform",
                 "do we have to wear uniform"
             ],
             "answer": [
-                "ENTER YOUR OWN UNIVERSITY UNIFORM CIRCULER"
+               "Nope"
             ]
         },
         {
             "tag": "committee",
             "question": [
                 "what are the different committe in college",
-                "different committee in college",
-                "Are there any committee in college",
+                "different committee in UTSA",
+                "Are there any committee in UTSA",
                 "Give me committee details",
                 "committee",
-                "how many committee are there in college"
+                "how many committee are there in UTSA"
             ],
             "answer": [
-                "For the various committe in college contact this number: ADD NUMBER"
+                "For the various committe in UTSA contact this number: ADD NUMBER"
             ]
         },
         {
@@ -687,16 +684,16 @@
                 "why i should use you"
             ],
             "answer": [
-                "I can answer to low-intermediate questions regarding college",
-                "You can ask me questions regarding college, and i will try to answer them"
+                "I can answer to low-intermediate questions regarding UTSA",
+                "You can ask me questions regarding UTSA, and i will try to answer them"
             ]
         },
         {
             "tag": "ragging",
             "question": [
                 "ragging",
-                "is ragging practice active in college",
-                "does college have any antiragging facility",
+                "is ragging practice active in UTSA",
+                "does UTSA have any antiragging facility",
                 "is there any ragging cases",
                 "is ragging done here",
                 "ragging against",
