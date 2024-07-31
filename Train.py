@@ -13,7 +13,7 @@ maxlen = 500  # Example value, adjust as needed
 (xTrain, yTrain), (xTest, yTest) = imdb.load_data(num_words=max_features)
 xTrain, xVal, yTrain, yVal = tts(xTrain, yTrain, test_size=0.3, random_state=42)
 
-version = ML.get_latest_model_version()
+latestVersion = ML.get_latest_model_version()
 
 def load_data(file_path):
     with open(file_path, 'r') as f:
@@ -36,6 +36,13 @@ def convert_sequences_to_texts(sequences, reverse_word_index):
     return [' '.join([reverse_word_index.get(i - 3, '?') for i in seq]) for seq in sequences]
 
 if __name__ == "__main__":
+    xTrain, tokenizer = Preprocessing.preprocess_and_vectorize_array(xTrain, max_features, maxlen)
+    xVal, _ = Preprocessing.preprocess_and_vectorize_array(xVal, max_features, maxlen)
+    xTest, _ = Preprocessing.preprocess_and_vectorize_array(xTest, max_features, maxlen)
+
+    # Ensure yTest is a numpy array
+    yTest = np.array(yTest)
+    
     # Get user input to create new model to train or train existing model
     print("Select an option:\n\
         1. Train a new model\n\
@@ -45,26 +52,12 @@ if __name__ == "__main__":
     # If user wants to train existing model enter version number
     if userInput == "2":
         version = input("Enter the model version number you wish to train: ")
-
-
-    # Convert sequences back to text
-    # word_index = imdb.get_word_index()
-    # reverse_word_index = {value: key for key, value in word_index.items()}
-
-    # xTrain_texts = convert_sequences_to_texts(xTrain, reverse_word_index)
-    # xVal_texts = convert_sequences_to_texts(xVal, reverse_word_index)
-    # xTest_texts = convert_sequences_to_texts(xTest, reverse_word_index)
-
-    xTrain, tokenizer = Preprocessing.preprocess_and_vectorize_array(xTrain, max_features, maxlen)
-    xVal, _ = Preprocessing.preprocess_and_vectorize_array(xVal, max_features, maxlen)
-    xTest, _ = Preprocessing.preprocess_and_vectorize_array(xTest, max_features, maxlen)
-
-    # Ensure yTest is a numpy array
-    yTest = np.array(yTest)
+        model = ML.load_model(version)
+        model, modelCheckpoint, history, timesteps = ML.train_model(xTrain, yTrain, xVal, yVal, batch_size = 32, epochs = 10, model = model, version = version)
+    else:
+        # Now you can train your model
+        model, modelCheckpoint, history, timesteps = ML.train_model(xTrain, yTrain, xVal, yVal, batch_size = 32, epochs = 50)
 
     # Reshape xTest to match the input shape (batch_size, timesteps, features)
-    xTest = xTest.reshape((xTest.shape[0], 1, xTest.shape[1]))
-
-    # Now you can train your model
-    model, modelCheckpoint, history = ML.train_model(xTrain, yTrain, xVal, yVal, batch_size = 32, epochs = 10)
+    xTest = np.array([np.pad(seq, (0, timesteps - len(seq))) for seq in xTest])
     model.evaluate(xTest, yTest, batch_size=32, callbacks=[modelCheckpoint])
